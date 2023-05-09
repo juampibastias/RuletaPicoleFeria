@@ -105,3 +105,45 @@
     height: auto;
     order: 3; /* Add this */
 }
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* high z-index to ensure it appears above all other elements */
+}
+
+.modal .imageBox {
+    text-align: center;
+}
+
+.modal img {
+    width: 550px;
+}
+
+.modal .titleWin {
+    text-align: center;
+    font-size: 32px;
+}
+
+.modal .closeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal .closepankaj {
+    margin-top: 30px;
+    width: 240px;
+    height: 54px;
+    cursor: pointer;
+    font-size: 17px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #2466ff;
+    border-radius: 5px;
+}

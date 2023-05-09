@@ -108,7 +108,7 @@ export class App extends Component {
 
                 {this.state.portal ? <TrPortal /> : null}
 
-                {this.state.show && (
+                {/* {this.state.show && (
                     <div className='box'>
                         <div className='imageBox'>
                             <img
@@ -139,7 +139,7 @@ export class App extends Component {
                             </button>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 <img
                     className='app-image'
