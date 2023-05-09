@@ -13,6 +13,7 @@ const WheelComponent = ({
     let currentSegment = '';
     let isStarted = false;
     const [isFinished, setFinished] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
     let timerHandle = 0;
     const timerDelay = segments.length;
     let angleCurrent = 0;
@@ -26,6 +27,41 @@ const WheelComponent = ({
     let frames = 0;
     const centerX = 550;
     const centerY = 550;
+
+    const Popup = () => (
+        <div
+            style={{
+                position: 'fixed',
+                width: '100%',
+                height: '100%',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                margin: 'auto',
+                backgroundColor: 'rgba(0,0,0, 0.5)',
+            }}
+        >
+            <div
+                style={{
+                    position: 'absolute',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%,-50%)',
+                    backgroundColor: '#fff',
+                    padding: '10px',
+                    borderRadius: '10px',
+                    width: '300px',
+                    height: '200px',
+                }}
+            >
+                <h1>CONGRATULATIONS!!!</h1>
+                <p>YOU HAVE WON {currentSegment} !!!</p>
+                <button onClick={() => setShowPopup(false)}>OK</button>
+            </div>
+        </div>
+    );
+
     useEffect(() => {
         wheelInit();
         setTimeout(() => {
@@ -132,7 +168,7 @@ const WheelComponent = ({
         ctx.translate(centerX, centerY);
         ctx.rotate((lastAngle + angle) / 2);
         ctx.fillStyle = contrastColor || 'white';
-        ctx.font = 'bold 1em proxima-nova';
+        ctx.font = 'bold 2em proxima-nova';
         ctx.fillText(value.substr(0, 21), size / 2 + 20, 0);
         ctx.restore();
     };
@@ -146,7 +182,7 @@ const WheelComponent = ({
         ctx.strokeStyle = primaryColor || 'black';
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
-        ctx.font = '1em proxima-nova';
+        ctx.font = '2em proxima-nova';
         for (let i = 1; i <= len; i++) {
             const angle = PI2 * (i / len) + angleCurrent;
             drawSegment(i - 1, lastAngle, angle);
@@ -161,7 +197,7 @@ const WheelComponent = ({
         ctx.lineWidth = 10;
         ctx.strokeStyle = contrastColor || 'white';
         ctx.fill();
-        ctx.font = 'bold 1em proxima-nova';
+        ctx.font = 'bold 3em proxima-nova';
         ctx.fillStyle = contrastColor || 'white';
         ctx.textAlign = 'center';
         ctx.fillText(buttonText || 'Spin', centerX, centerY + 3);
@@ -207,14 +243,17 @@ const WheelComponent = ({
         ctx.clearRect(0, 0, 1000, 500);
     };
     return (
-        <canvas
-            id='canvas'
-            width='1100'
-            height='1100'
-            style={{
-                pointerEvents: isFinished && !isOnlyOnce ? 'none' : 'auto',
-            }}
-        />
+        <>
+            <canvas
+                id='canvas'
+                width='1100'
+                height='1100'
+                style={{
+                    pointerEvents: isFinished && !isOnlyOnce ? 'none' : 'auto',
+                }}
+            />
+            {showPopup && <Popup />}
+        </>
     );
 };
 export default WheelComponent;

@@ -4,7 +4,7 @@ import WheelComponent from './weel';
 import 'react-wheel-of-prizes/dist/index.css';
 import './styles.css';
 import IMAGES from './assets';
-import Logo from './assets/escola-sorvete-horizontal.png';
+import Logo from './assets/logo-horizontal.png';
 
 import TrPortal from './portal';
 import Confetti from 'react-confetti';
@@ -47,11 +47,11 @@ export class App extends Component {
         const weelColors = () => {
             let arr = [];
             let colors = [
-                '#EE4040',
-                '#F0CF50',
-                '#815CD1',
-                '#3DA5E0',
-                '#34A24F',
+                '#Ce417d',
+                '#534341',
+                '#d6d3c6',
+                '#93c6c7',
+                '#500878',
             ];
             segments.forEach((el) => {
                 let color = colors.shift();
@@ -84,15 +84,17 @@ export class App extends Component {
                         margin: 'auto',
                         marginBottom: '20px',
                         fontSize: '3.5rem',
-                        color: '#EE3A80',
-                        textShadow: '2px 2px 4px white',
+                        color: '#Ce417d',
+
                         fontWeight: 'bold',
                     }}
                 >
-                    Gira la ruleta para conseguir premios increibles!
+                    <i>Gira la ruleta para conseguir premios increibles!</i>
                 </h1>
 
-                {this.state.show && <Confetti width={1600} height={1019} />}
+                <hr />
+
+                {this.state.show && <Confetti width={1080} height={1920} />}
                 <div style={{ margin: 'auto', marginTop: '30px' }}>
                     <WheelComponent
                         segments={segments}
@@ -146,8 +148,8 @@ export class App extends Component {
                     src={Logo}
                     alt='Escola Sorvete Logo'
                     style={{
-                        width: '500px',
-                        height: '500px',
+                        width: '1100px',
+                        height: '450px',
                         marginTop: 'auto',
                         position: 'relative',
                     }}
