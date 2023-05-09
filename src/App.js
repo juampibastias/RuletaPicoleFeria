@@ -66,6 +66,7 @@ export class App extends Component {
         const onFinished = (winner) => {
             this.setState({ portal: false, show: winner });
         };
+
         return (
             <div
                 style={{
@@ -75,32 +76,40 @@ export class App extends Component {
                     flexDirection: 'column',
                     background:
                         'linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%)',
-                    height: '100vh', // change this to 100vh
+                    height: '100vh',
                 }}
             >
-                <h1 style={{ order: 1 }}>
-                    Welcome to the Spin the Wheel Game!
+                <h1
+                    style={{
+                        margin: 'auto',
+                        marginBottom: '20px',
+                        fontSize: '3.5rem',
+                        color: '#EE3A80',
+                        textShadow: '2px 2px 4px white',
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Gira la ruleta para conseguir premios increibles!
                 </h1>
 
-                {this.state.show && (
-                    <Confetti width={1600} height={1019} style={{ order: 2 }} />
-                )}
-                <WheelComponent
-                    segments={segments}
-                    segColors={segColors}
-                    winningSegment={'8'}
-                    onFinished={(winner) => onFinished(winner)}
-                    primaryColor='gray'
-                    contrastColor='white'
-                    buttonText='Spin'
-                    isOnlyOnce={true}
-                    style={{ order: 2 }}
-                />
+                {this.state.show && <Confetti width={1600} height={1019} />}
+                <div style={{ margin: 'auto', marginTop: '30px' }}>
+                    <WheelComponent
+                        segments={segments}
+                        segColors={segColors}
+                        winningSegment={'8'}
+                        onFinished={(winner) => onFinished(winner)}
+                        primaryColor='gray'
+                        contrastColor='white'
+                        buttonText='Spin'
+                        isOnlyOnce={true}
+                    />
+                </div>
 
-                {this.state.portal ? <TrPortal style={{ order: 2 }} /> : null}
+                {this.state.portal ? <TrPortal /> : null}
 
                 {this.state.show && (
-                    <div className='box' style={{ order: 2 }}>
+                    <div className='box'>
                         <div className='imageBox'>
                             <img
                                 src={
@@ -137,9 +146,10 @@ export class App extends Component {
                     src={Logo}
                     alt='Escola Sorvete Logo'
                     style={{
-                        width: '500px', // adjust the size as needed
-                        height: '500px', // adjust the size as needed
-                        order: 3, // This will move the logo to the end/bottom of the flex container
+                        width: '500px',
+                        height: '500px',
+                        marginTop: 'auto',
+                        position: 'relative',
                     }}
                 />
             </div>
