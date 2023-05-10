@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     overflow-x: hidden;
     position: relative;
@@ -13,6 +15,10 @@
     justify-content: center; /* Add this */
     align-items: center; /* Add this */
     height: 100vh; /* Add this */
+}
+
+.titulooo {
+    font-family: 'Poppins', sans-serif;
 }
 
 .center {
