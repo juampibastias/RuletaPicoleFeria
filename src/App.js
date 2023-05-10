@@ -32,16 +32,33 @@ export class App extends Component {
             APPLEAIRPODSPRO: 10,
         };
         const segments = [
-            'Mentoría con Francisco SantAna',
+            // 10% chance
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            'Mercha de la escola',
+            '10% Descuento curso o suscripción online',
             '10% Descuento curso o suscripción online',
             '20% Descuento curso o suscripción online',
-            'Suscripción anual baunilha grátis',
-            'Curso presencial intensivo gratis',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            'Mentoría con Francisco SantAna',
+            '10% Descuento curso o suscripción online',
             'Mercha de la escola',
-            '10GRAMS GOLD COIN',
-            'VOUCHER FOR GEORGIA FAMILY TRIP UPTO 4',
-            'AMAZON GIFT VOUCHER WORTH 1000AED',
-            'APPLE AIRPODS PRO',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            'Suscripción anual baunilha grátis',
+            '10% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online', // 70% chance
+            '20% Descuento curso o suscripción online',
+            '10% Descuento curso o suscripción online',
+            'Curso presencial intensivo gratis',
+            '10% Descuento curso o suscripción online',
+            '20% Descuento curso o suscripción online', // 30% change
+            'Mercha de la escola', // 30% chance
+            '10% Descuento curso o suscripción online',
         ];
 
         const weelColors = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useSound from 'use-sound';
 
 // Internals
-import spinSound from './assets/soundspin2.mp3';
+import spinSound from './assets/soundspin3.mp3';
 
 const WheelComponent = ({
     segments,
