@@ -107,7 +107,9 @@ export class App extends Component {
                         fontWeight: 'bold',
                     }}
                 >
-                    <i>Gire a roda e ganhe prêmios incríveis.</i>
+                    <i className='titulooo'>
+                        Gire a roda e ganhe prêmios incríveis.
+                    </i>
                 </h1>
 
                 <hr />
