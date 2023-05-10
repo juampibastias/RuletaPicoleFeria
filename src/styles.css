@@ -147,3 +147,27 @@
     background: #2466ff;
     border-radius: 5px;
 }
+
+@keyframes color-change {
+    0% {
+        border-color: #ce417d;
+    }
+    25% {
+        border-color: #534341;
+    }
+    50% {
+        border-color: #d6d3c6;
+    }
+    75% {
+        border-color: #93c6c7;
+    }
+    100% {
+        border-color: #500878;
+    }
+}
+
+.animated-border {
+    border-width: 5px;
+    border-style: solid;
+    animation: color-change 2s infinite;
+}

@@ -142,7 +142,7 @@ export class App extends Component {
                             }}
                         />
                         <div
-                            className='box'
+                            className='box animated-border'
                             style={{
                                 position: 'fixed',
                                 zIndex: 1000,
