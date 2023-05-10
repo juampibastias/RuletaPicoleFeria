@@ -77,6 +77,7 @@ export class App extends Component {
                     background:
                         'linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%)',
                     height: '100vh',
+                    position: 'relative',
                 }}
             >
                 <h1
@@ -110,38 +111,93 @@ export class App extends Component {
 
                 {this.state.portal ? <TrPortal /> : null}
 
-                {/* {this.state.show && (
-                    <div className='box'>
-                        <div className='imageBox'>
-                            <img
-                                src={
-                                    IMAGES[
-                                        `image${
-                                            objIndex[
-                                                this.state.show
-                                                    .split(' ')
-                                                    .join('')
-                                            ]
-                                        }`
-                                    ]
-                                }
-                                alt=''
-                            />
-                        </div>
-                        <h2 className='titleWin'>
-                            CONGRATULATIONS!!! YOU HAVE WON {this.state.show}
-                            !!!
-                        </h2>
-                        <div className='closeContainer'>
-                            <button
-                                className='closepankaj'
-                                onClick={() => this.setState({ show: false })}
+                {this.state.show && (
+                    <>
+                        <div
+                            style={{
+                                position: 'fixed',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                zIndex: 999,
+                            }}
+                        />
+                        <div
+                            className='box'
+                            style={{
+                                position: 'fixed',
+                                zIndex: 1000,
+                                top: '50%',
+                                left: '50%',
+                                transform: 'translate(-50%, -50%)',
+                                backgroundColor: '#ffffff',
+                                padding: '20px',
+                                borderRadius: '15px',
+                                width: '90%',
+                                maxWidth: '600px',
+                                boxShadow: '0px 5px 15px rgba(0,0,0,0.2)',
+                                textAlign: 'center',
+                            }}
+                        >
+                            <div className='imageBox'>
+                                <img
+                                    src={
+                                        IMAGES[
+                                            `image${
+                                                objIndex[
+                                                    this.state.show
+                                                        .split(' ')
+                                                        .join('')
+                                                ]
+                                            }`
+                                        ]
+                                    }
+                                    alt=''
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        marginBottom: '15px',
+                                        borderRadius: '10px',
+                                    }}
+                                />
+                            </div>
+                            <h2
+                                className='titleWin'
+                                style={{
+                                    color: '#333',
+                                    marginBottom: '15px',
+                                }}
                             >
-                                OK
-                            </button>
+                                CONGRATULATIONS!!! YOU HAVE WON{' '}
+                                {this.state.show}
+                                !!!
+                            </h2>
+                            <div className='closeContainer'>
+                                <button
+                                    className='closepankaj'
+                                    onClick={() =>
+                                        this.setState({ show: false })
+                                    }
+                                    style={{
+                                        backgroundColor: '#Ce417d',
+                                        color: '#ffffff',
+                                        border: 'none',
+                                        padding: '10px 20px',
+                                        borderRadius: '5px',
+                                        fontSize: '1.5em',
+                                        cursor: 'pointer',
+                                        width: '600px',
+                                        height: '70px',
+                                    }}
+                                >
+                                    OK
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                )} */}
+                    </>
+                )}
 
                 <img
                     className='app-image'
