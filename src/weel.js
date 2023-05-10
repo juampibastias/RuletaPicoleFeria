@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+
+// Internals
+import spinSound from './assets/soundspin2.mp3';
 
 const WheelComponent = ({
     segments,
@@ -27,6 +31,9 @@ const WheelComponent = ({
     let frames = 0;
     const centerX = 550;
     const centerY = 550;
+
+    const [play, { stop }] = useSound(spinSound);
+    const sound = new Audio(spinSound);
 
     const Popup = () => (
         <div
@@ -85,16 +92,31 @@ const WheelComponent = ({
         canvas.addEventListener('click', spin, false);
         canvasContext = canvas.getContext('2d');
     };
-    const spin = () => {
+    const spin = async () => {
         isStarted = true;
+        try {
+            if (sound.readyState === 4) {
+                sound.play();
+            } else {
+                sound.addEventListener(
+                    'canplaythrough',
+                    () => {
+                        sound.play();
+                    },
+                    false
+                );
+            }
+        } catch (error) {
+            console.error('Failed to play the sound:', error);
+        }
         if (timerHandle === 0) {
             spinStart = new Date().getTime();
-            // maxSpeed = Math.PI / ((segments.length*2) + Math.random())
             maxSpeed = Math.PI / segments.length;
             frames = 0;
             timerHandle = setInterval(onTimerTick, timerDelay);
         }
     };
+
     const onTimerTick = () => {
         frames++;
         draw();
@@ -137,6 +159,8 @@ const WheelComponent = ({
             clearInterval(timerHandle);
             timerHandle = 0;
             angleDelta = 0;
+
+            stop();
         }
     };
 

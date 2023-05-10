@@ -32,12 +32,12 @@ export class App extends Component {
             APPLEAIRPODSPRO: 10,
         };
         const segments = [
-            'I phone 13 pro max',
-            'Bose surround speakers',
-            'Samsung 65-Inch Crystal UHD 4K Flat Smart TV ',
-            'MacBook Air MGN63 14” Display, Apple M1 Chip With 8-Core',
-            'KIA TELLURIDE 2022',
-            'SAMSUNG FRONT LOAD WASHING MACHINE 16KG',
+            'Mentoría con Francisco SantAna',
+            '10% Descuento curso o suscripción online',
+            '20% Descuento curso o suscripción online',
+            'Suscripción anual baunilha grátis',
+            'Curso presencial intensivo gratis',
+            'Mercha de la escola',
             '10GRAMS GOLD COIN',
             'VOUCHER FOR GEORGIA FAMILY TRIP UPTO 4',
             'AMAZON GIFT VOUCHER WORTH 1000AED',
@@ -90,7 +90,7 @@ export class App extends Component {
                         fontWeight: 'bold',
                     }}
                 >
-                    <i>Gira la ruleta para conseguir premios increibles!</i>
+                    <i>Gire a roda e ganhe prêmios incríveis.</i>
                 </h1>
 
                 <hr />
@@ -185,10 +185,10 @@ export class App extends Component {
                                         color: '#ffffff',
                                         border: 'none',
                                         padding: '10px 20px',
-                                        borderRadius: '5px',
+                                        borderRadius: '12px',
                                         fontSize: '1.5em',
                                         cursor: 'pointer',
-                                        width: '600px',
+                                        width: '400px',
                                         height: '70px',
                                     }}
                                 >
