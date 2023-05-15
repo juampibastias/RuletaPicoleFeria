@@ -5,7 +5,7 @@ import "./styles.css";
 import IMAGES from "./assets";
 import Logo from "./assets/logo-horizontal.png";
 import TrPortal from "./portal";
-import Confetti from "react-confetti";
+/* import Confetti from "react-confetti"; */
 import emailjs from "emailjs-com";
 
 export class App extends Component {
@@ -166,7 +166,7 @@ export class App extends Component {
 
         <hr />
 
-        {this.state.show && <Confetti width={1080} height={1920} />}
+        {this.state.show && {/* <Confetti width={1080} height={1920} /> */}}
         <div style={{ margin: "auto", marginTop: "30px" }}>
           <WheelComponent
             segments={segments}
